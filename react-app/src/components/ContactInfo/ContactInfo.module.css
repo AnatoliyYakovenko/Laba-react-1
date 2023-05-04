@@ -9,3 +9,11 @@
 .item {
   margin-bottom: 8px;
 }
+.contactTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.contactInfo {
+  color: #263036;
+}

@@ -7,7 +7,7 @@ import myImage from "./assets/yakovenkoA.png";
 function App() {
   return (
     <div className="App">
-      <div className="wrapper">
+      <div>
         <Photo src={myImage} />
         <ContactInfo />
       </div>

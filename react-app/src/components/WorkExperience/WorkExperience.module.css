@@ -1,5 +1,4 @@
 .work {
-  padding-top: 10px;
   padding-left: 20px;
 }
 .title {
@@ -8,5 +7,13 @@
   font-size: 36px;
 }
 .item {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+}
+p {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+span {
+  font-weight: 400;
+  color: #263036;
 }
