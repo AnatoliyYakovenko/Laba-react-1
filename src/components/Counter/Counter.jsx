@@ -5,7 +5,6 @@ import css from './Counter.module.css';
 
 export const Counter = () => {
   const [value, setValue] = useState(42);
-
   return (
     <div className = {css.counterContainer}>
       <p>Count {value}</p>

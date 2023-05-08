@@ -26,6 +26,7 @@ const workExperienceList =[{
 ]
 
 export function WorkExperience(){
+    
     return (
         <div className={css.work}>
         <h2 className={css.title}>Work Experience</h2>
