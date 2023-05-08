@@ -3,6 +3,7 @@ import { WorkExperience } from "./components/WorkExperience";
 import "./App.css";
 import { Photo } from "./components/Photo";
 import myImage from "./assets/yakovenkoA.png";
+import { Counter } from "./components/Counter";
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
         <Photo src={myImage} />
         <ContactInfo />
       </div>
-      <WorkExperience />
+      <div>
+        <WorkExperience />
+        <Counter />
+      </div>
     </div>
   );
 }
