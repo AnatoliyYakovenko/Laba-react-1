@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { Button } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ArrowUpwardSharp from '@mui/icons-material/ArrowUpwardSharp';
+
 import { WorkItem } from '../WorkItem/WorkItem';
 import { WorkForm } from "../WorkForm/WorkForm";
 
@@ -29,9 +33,13 @@ const INITIAL_WORK_LIST =[{
 
 export function WorkExperience(){
     const[workList, setWorkList] = useState(INITIAL_WORK_LIST);
-    
+    const [isClicked, setIsClicked] = useState(false);
+
     const handleAddWork = (newWork) => {
         setWorkList((prevWorkList) => [...prevWorkList, newWork]);
+      };
+      const handleClick = () => {
+        setIsClicked(!isClicked);
       };
 
     return (
@@ -46,7 +54,12 @@ export function WorkExperience(){
           ))}
         </ul>  
       )}
-       <WorkForm onAddWork={handleAddWork} />
+      <Button 
+      variant="contained" 
+      onClick={handleClick}>{isClicked? 'Hide form': "Add Work experience"}
+      {isClicked? <ArrowUpwardSharp className={css.btnIcon}/>: <AddCircleIcon className={css.btnIcon}/>}
+      </Button>
+      {isClicked && <WorkForm onAddWork={handleAddWork} />}
         </div>   
     );
 }

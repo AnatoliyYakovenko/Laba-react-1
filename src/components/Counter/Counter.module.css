@@ -3,4 +3,9 @@
   padding: 20px;
   border: 1px solid black;
 }
-
+.addIcon {
+  margin-left: 5px;
+}
+.deleteIcon {
+  margin-right: 5px;
+}
