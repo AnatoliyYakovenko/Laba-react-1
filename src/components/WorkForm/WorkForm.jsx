@@ -38,6 +38,9 @@ function onSubmit(event) {
     event.preventDefault();
     onAddWork(formData);
     setFormData(INITIAL_WORK);
+    if(isEnableSubmit){
+    console.log("ALART");    
+    }
   }
 const isEnableSubmit = checkSubmitAbility(formData);
 
@@ -61,7 +64,7 @@ const isEnableSubmit = checkSubmitAbility(formData);
             </label>
           );
         })}
-        <p className={css.notice}>Notice: Please fill in all the fields!</p>
+        {!isEnableSubmit&&<p className={css.notice}>Notice: Please fill in all the fields!</p>}
         <Button 
         type ="submit"
         className={css.submitBtn}
@@ -73,8 +76,4 @@ const isEnableSubmit = checkSubmitAbility(formData);
       </div>
     );
 }
-    //   type="submit"
-        
-        //   className={css.tutorBtn}
-        //   title="Submit"
-    
+ 

@@ -27,10 +27,14 @@
   border: 1px solid rgb(184, 181, 181);
   border-radius: 10px;
 }
+.formInput:last-child {
+  margin-bottom: 10px;
+}
 .notice {
   margin-bottom: 10px;
   font-size: 12px;
-  color: rgb(67, 66, 66);
+  /* color: rgb(67, 66, 66); */
+  color: red;
 }
 .submitBtn {
   width: 50%;
