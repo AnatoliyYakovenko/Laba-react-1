@@ -42,7 +42,7 @@ function onSubmit(event) {
 const isEnableSubmit = checkSubmitAbility(formData);
 
     return(
-        <>
+        <div className={css.workForm}>
         <h3 className={css.formTitle}>Add work experience</h3>
         <form className={css.form} onSubmit={onSubmit}>
            {WORK_FORM_BUILD.map(({ label, placeholder, name, }) => {
@@ -70,7 +70,7 @@ const isEnableSubmit = checkSubmitAbility(formData);
         >Add work</Button>
     
       </form>
-      </>
+      </div>
     );
 }
     //   type="submit"
