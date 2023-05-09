@@ -37,7 +37,6 @@ export function WorkExperience(){
     return (
         <div className={css.work}>
         <h2 className={css.title}>Work Experience</h2>
-        <WorkForm onAddWork={handleAddWork} />
         {workList.length === 0 ? (
         <p>No work experience to display.</p>
       ) : (
@@ -45,8 +44,9 @@ export function WorkExperience(){
           {workList.map((work, index) => (
             <WorkItem key={index} {...work} />
           ))}
-        </ul>
+        </ul>  
       )}
+       <WorkForm onAddWork={handleAddWork} />
         </div>   
     );
 }

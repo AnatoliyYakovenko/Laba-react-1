@@ -1,7 +1,30 @@
+.formTitle {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
 .form {
   width: 50%;
   margin-bottom: 50px;
   display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.label {
+  display: flex;
   gap: 5px;
   flex-direction: column;
+  font-size: 14px;
+}
+.formInput {
+  padding: 5px;
+  border: 1px solid rgb(184, 181, 181);
+  border-radius: 10px;
+}
+.notice {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: rgb(67, 66, 66);
+}
+.submitBtn {
+  width: 50%;
 }

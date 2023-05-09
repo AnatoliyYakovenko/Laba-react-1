@@ -4,11 +4,11 @@ import { Button } from '@mui/material';
 import css from './WorkForm.module.css';
 
 const WORK_FORM_BUILD = [
-    { placeholder: 'Company Web-site', name: 'link' },
-    { placeholder: "Company name", name: 'name' },
-    { placeholder: 'Work period', name: 'dates' },
-    { placeholder: 'Job title', name: 'title' },
-    { placeholder: 'Role description', name: 'description' },
+    { label: "Company web-site:", placeholder: 'Example: https://company.ua/', name: 'link' },
+    { label: "Company name:", placeholder: "Example: Company", name: 'name' },
+    { label: "Work period:", placeholder: 'Example: mm/yyyy-mm/yyyy', name: 'dates' },
+    { label: "Job title:", placeholder: 'Example: manager', name: 'title' },
+    { label: "Role description:", placeholder: 'Example: active sales', name: 'description' },
   ];
   
   const INITIAL_WORK = {
@@ -40,17 +40,20 @@ function onSubmit(event) {
     setFormData(INITIAL_WORK);
   }
 const isEnableSubmit = checkSubmitAbility(formData);
+
     return(
         <>
         <h3 className={css.formTitle}>Add work experience</h3>
         <form className={css.form} onSubmit={onSubmit}>
-           {WORK_FORM_BUILD.map(({ placeholder, name }) => {
+           {WORK_FORM_BUILD.map(({ label, placeholder, name, }) => {
           return (
-            <label key={name}>
+            <label className={css.label}key={name} htmlFor={name}>
+                {label}
               <input
                 required
                 placeholder={placeholder}
                 name={name}
+                id={name}
                 className={css.formInput}
                 onChange={handleInputChange}
                 value={formData[name]}
@@ -58,9 +61,10 @@ const isEnableSubmit = checkSubmitAbility(formData);
             </label>
           );
         })}
-
+        <p className={css.notice}>Notice: Please fill in all the fields!</p>
         <Button 
         type ="submit"
+        className={css.submitBtn}
         variant="contained" 
         disabled={!isEnableSubmit}
         >Add work</Button>
