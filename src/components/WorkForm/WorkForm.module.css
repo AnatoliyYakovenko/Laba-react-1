@@ -1,0 +1,7 @@
+.form {
+  width: 50%;
+  margin-bottom: 50px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}

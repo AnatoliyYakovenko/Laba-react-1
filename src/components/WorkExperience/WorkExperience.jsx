@@ -1,8 +1,10 @@
+import { useState } from 'react';
+import { WorkItem } from '../WorkItem/WorkItem';
+import { WorkForm } from "../WorkForm/WorkForm";
+
 import css from './WorkExperience.module.css';
-import {WorkItem} from '../WorkItem/WorkItem';
 
-
-const workExperienceList =[{
+const INITIAL_WORK_LIST =[{
     link: "https://deps.ua", 
     name: "DEPS Ltd",
     dates: "12/2021 – 05/2022", 
@@ -26,23 +28,25 @@ const workExperienceList =[{
 ]
 
 export function WorkExperience(){
+    const[workList, setWorkList] = useState(INITIAL_WORK_LIST);
     
+    const handleAddWork = (newWork) => {
+        setWorkList((prevWorkList) => [...prevWorkList, newWork]);
+      };
+
     return (
         <div className={css.work}>
         <h2 className={css.title}>Work Experience</h2>
+        <WorkForm onAddWork={handleAddWork} />
+        {workList.length === 0 ? (
+        <p>No work experience to display.</p>
+      ) : (
         <ul>
-        {workExperienceList.map(({title, description, name, link, dates}, index)=>(
-         <WorkItem 
-         key = {index}
-         link = {link}
-         name ={name}
-         dates ={dates}
-         title ={title}
-         description ={description}
-        />
-        ))
-        } 
+          {workList.map((work, index) => (
+            <WorkItem key={index} {...work} />
+          ))}
         </ul>
+      )}
         </div>   
     );
 }

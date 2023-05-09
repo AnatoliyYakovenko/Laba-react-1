@@ -5,6 +5,7 @@ import { Photo } from "./components/Photo";
 import myImage from "./assets/yakovenkoA.png";
 import { Counter } from "./components/Counter";
 
+
 function App() {
   return (
     <div className="App">
