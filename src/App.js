@@ -5,9 +5,9 @@ import { Resume } from "./components/Resume";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <div>
-        <nav>
+        <nav className="navigation">
           <Link to="/" end>
             Resume
           </Link>

@@ -1,8 +1,16 @@
 .App {
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 0px auto;
+  display: flex;
+}
+.navigation {
+  padding: 10px 10px;
+  font-size: 32px;
+  font-weight: 600;
   display: flex;
   gap: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
 }
 .App-logo {
   height: 40vmin;
