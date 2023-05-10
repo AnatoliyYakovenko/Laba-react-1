@@ -1,21 +1,22 @@
-import { ContactInfo } from "./components/ContactInfo";
-import { WorkExperience } from "./components/WorkExperience";
+import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
-import { Photo } from "./components/Photo";
-import myImage from "./assets/yakovenkoA.png";
 import { Counter } from "./components/Counter";
-
+import { Resume } from "./components/Resume";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <div>
-        <Photo src={myImage} />
-        <ContactInfo />
-      </div>
-      <div>
-        <WorkExperience />
-        <Counter />
+        <nav>
+          <Link to="/" end>
+            Resume
+          </Link>
+          <Link to="/counter">Counter</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Resume />} />
+          <Route path="/counter" element={<Counter />} />
+        </Routes>
       </div>
     </div>
   );
